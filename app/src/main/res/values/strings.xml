@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DrinkMixr</string>
+    <string name="category_label">Please select a category</string>
+    <string name="btn_go">GO!</string>
+</resources>

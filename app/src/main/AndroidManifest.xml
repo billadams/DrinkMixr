@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".CategoryView">
         </activity>
+        <activity android:name=".AddNewBeverage">
+        </activity>
     </application>
 
 </manifest>

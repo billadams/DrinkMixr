@@ -69,7 +69,7 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.ViewHo
             @Override
             public void onClick(View v)
             {
-                remove(name);
+//                remove(name);
             }
         });
 

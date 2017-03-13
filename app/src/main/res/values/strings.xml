@@ -2,4 +2,10 @@
     <string name="app_name">DrinkMixr</string>
     <string name="category_label">Please select a category</string>
     <string name="btn_go">GO!</string>
+
+    <string name="btn_new">Add New</string>
+
+    <string name="drinkName">Drink Name:</string>
+    <string name="drinkIngredients">Ingredients:</string>
+    <string name="specialInstructions">Additional Instructions</string>
 </resources>

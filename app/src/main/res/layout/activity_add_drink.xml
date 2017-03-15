@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
-    tools:context="com.bawebdevelopment.drinkmixr.AddNewBeverage">
+    android:orientation="vertical"
+    tools:context="com.bawebdevelopment.drinkmixr.AddDrinkActivity">
 
     <TextView
         android:id="@+id/lblDrinkName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/drinkName"/>
+        android:text="@string/drinkName"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/txtDrinkName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="text"/>
 
@@ -31,18 +29,15 @@
         android:id="@+id/lblDrinkIngredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
         android:text="@string/drinkIngredients"
-        android:layout_below="@+id/txtDrinkName"
-        android:layout_alignParentStart="true"/>
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/txtIngredients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblDrinkIngredients"
-        android:layout_marginTop="14dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="text"/>
 
@@ -50,29 +45,23 @@
         android:id="@+id/lblDrinkInstructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/specialInstructions"
-        android:layout_below="@+id/txtIngredients"
-        android:layout_alignParentStart="true"/>
-    <EditText
+        android:text="@string/drinkInstructions"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
+    <EditText
         android:id="@+id/txtInstructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:layout_below="@+id/lblDrinkInstructions"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp"/>
+        android:inputType="textMultiLine"/>
 
     <Button
         android:id="@+id/btn_add_new"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtInstructions"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp"
         android:onClick="onClick"
         android:text="@string/btn_new"/>
 
-</RelativeLayout>
+</LinearLayout>

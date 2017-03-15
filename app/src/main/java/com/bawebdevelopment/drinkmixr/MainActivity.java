@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -18,7 +17,7 @@ public class MainActivity extends AppCompatActivity
 {
     private Spinner spinner;
     private String categoryChoice;
-    private List<Beverage> beverages;
+    private List<Drink> drinks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,8 +29,8 @@ public class MainActivity extends AppCompatActivity
 
         if(!sharedPref.contains("serializedBeverageList"))
         {
-            beverages = BeverageDB.getAllBeverages();
-            String serializedList = new Gson().toJson(beverages);
+            drinks = DrinkDB.getAllBeverages();
+            String serializedList = new Gson().toJson(drinks);
 
             sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = sharedPref.edit();
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View view)
     {
         categoryChoice = spinner.getSelectedItem().toString();
-        Intent intent = new Intent(getBaseContext(), CategoryView.class);
+        Intent intent = new Intent(getBaseContext(), CategoryViewActivity.class);
         final String CATEGORY = "com.bawebdevelopment.CATEGORY";
         intent.putExtra("CATEGORY", categoryChoice);
         startActivity(intent);

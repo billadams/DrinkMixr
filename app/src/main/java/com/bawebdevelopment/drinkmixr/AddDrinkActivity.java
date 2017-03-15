@@ -14,20 +14,24 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddNewBeverage extends AppCompatActivity
+public class AddDrinkActivity extends AppCompatActivity
 {
-    private List<Beverage> beverages;
+    private List<Drink> drinks;
     private List<String> instructionsList;
-    private Beverage beverage;
+    private Drink drink;
     private EditText name;
     private EditText ingredients;
     private EditText instructions;
+    SharedPreferences sharedPref;
+    String serializedBeverageList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_new_beverage);
+        setContentView(R.layout.activity_add_drink);
+
+        this.setTitle("Add New Drink");
 
         name = (EditText) findViewById(R.id.txtDrinkName);
         ingredients = (EditText) findViewById(R.id.txtIngredients);
@@ -36,7 +40,7 @@ public class AddNewBeverage extends AppCompatActivity
 
     public void onClick(View view)
     {
-        beverages = new ArrayList<Beverage>();
+        drinks = new ArrayList<Drink>();
         instructionsList = new ArrayList<String>();
 
         String drinkName = name.getText().toString();
@@ -44,24 +48,24 @@ public class AddNewBeverage extends AppCompatActivity
         String drinkInstructions = instructions.getText().toString();
         instructionsList.add(drinkInstructions);
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String serializedBeverageList = sharedPref.getString("serializedBeverageList", "");
-        beverages = new Gson().fromJson(serializedBeverageList, new TypeToken<List<Beverage>>(){}.getType());
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        serializedBeverageList = sharedPref.getString("serializedBeverageList", "");
+        drinks = new Gson().fromJson(serializedBeverageList, new TypeToken<List<Drink>>(){}.getType());
 
-        beverage = new Beverage();
-        beverage.setName(drinkName);
-        beverage.setIngredients(instructionsList);
-        beverage.setMixInstructions(drinkInstructions);
+        drink = new Drink();
+        drink.setName(drinkName);
+        drink.setIngredients(instructionsList);
+        drink.setMixInstructions(drinkInstructions);
 
-        beverages.add(beverage);
+        drinks.add(drink);
 
-        String serializedList = new Gson().toJson(beverages);
+        serializedBeverageList = new Gson().toJson(drinks);
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("serializedBeverageList", serializedList);
+        editor.putString("serializedBeverageList", serializedBeverageList);
         editor.apply();
 
-        Intent intent = new Intent(getBaseContext(), CategoryView.class);
+        Intent intent = new Intent(getBaseContext(), CategoryViewActivity.class);
         intent.putExtra("ADD_SUCCESS", "New drink added!");
         startActivity(intent);
     }

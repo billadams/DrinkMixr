@@ -7,5 +7,8 @@
 
     <string name="drinkName">Drink Name:</string>
     <string name="drinkIngredients">Ingredients:</string>
-    <string name="specialInstructions">Additional Instructions</string>
+    <string name="drinkInstructions">Additional Instructions</string>
+
+    <string name="txtIngredients">Ingredients</string>
+    <string name="txtInstructions">Special Instructions</string>
 </resources>

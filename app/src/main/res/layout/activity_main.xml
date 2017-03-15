@@ -29,14 +29,22 @@
 
     <Button
         android:id="@+id/btn_go"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/btn_go"
-        android:onClick="onClick">
+        android:layout_marginBottom="34dp"
+        android:onClick="onClick"
+        android:text="@string/btn_go">
 
     </Button>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/drinks"
+        android:layout_alignBottom="@+id/category_label"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

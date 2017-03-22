@@ -1,5 +1,7 @@
 package com.bawebdevelopment.drinkmixr;
 
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,14 @@ import java.util.List;
 
 public class DrinkDB
 {
+    private SQLiteDatabase database;
+    private DrinkReaderContract.CocktailSQLiteHelper dbhelper;
+    private Drink drink = new Drink();
+    private List<Drink> drinkList = { drink.setId(DrinkReaderContract.CocktailSQLiteHelper.COLUMN_ID,
+            )};
 
+    // Creates a dummy list of Drink objects to make the application usable without
+    // being hooked up to a database.
     public static List<Drink> getAllBeverages()
     {
         ArrayList<Drink> drinkList = new ArrayList<Drink>();

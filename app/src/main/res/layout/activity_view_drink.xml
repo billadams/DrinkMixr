@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp"
     android:orientation="vertical"
-    tools:context="com.bawebdevelopment.drinkmixr.DrinkViewActivity">
+    tools:context="com.bawebdevelopment.drinkmixr.ViewDrinkActivity">
+
+    <include layout="@layout/toolbar"/>
 
     <TextView
         android:id="@+id/drinkName"

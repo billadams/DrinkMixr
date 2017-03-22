@@ -10,13 +10,13 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Bill on 3/9/17.
  */
 
+// Creates the adapter for the RecyclerView.
 public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.ViewHolder>
 {
     private List<Drink> mDrinks;
@@ -47,7 +47,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.ViewHolder>
             {
                 Drink drink = mDrinks.get(position);
                 List<String> ingredients = drink.getIngredients();
-                Intent intent = new Intent(mContext, DrinkViewActivity.class);
+                Intent intent = new Intent(mContext, ViewDrinkActivity.class);
                 String s = (new Gson().toJson(drink));
                 intent.putExtra("SELECTED_DRINK", s);
                 mContext.startActivity(intent);

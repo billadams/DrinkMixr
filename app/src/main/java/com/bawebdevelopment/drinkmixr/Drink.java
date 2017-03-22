@@ -6,6 +6,7 @@ import java.util.List;
  * Created by Bill on 3/9/17.
  */
 
+// Standard object used to hold drinks.
 public class Drink
 {
     private int id;

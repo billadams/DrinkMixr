@@ -5,24 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp"
-    tools:context="com.bawebdevelopment.drinkmixr.CategoryViewActivity">
+    tools:context="com.bawebdevelopment.drinkmixr.ViewAllDrinksActivity">
+
+    <include layout="@layout/toolbar"/>
 
     <Button
         android:id="@+id/btn_add_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:layout_marginTop="?attr/actionBarSize"
         android:onClick="onClick"
         android:text="@string/btn_new" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/category_recycler_view"
+        android:id="@+id/all_drinks_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/btn_add_new"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:background="#0000ff"/>
 
 </RelativeLayout>

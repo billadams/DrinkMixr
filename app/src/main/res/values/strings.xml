@@ -11,4 +11,6 @@
 
     <string name="txtIngredients">Ingredients</string>
     <string name="txtInstructions">Special Instructions</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
